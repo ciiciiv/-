@@ -1,0 +1,31 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+public class backmain : MonoBehaviour {
+
+	void Start () {
+
+		GameObject btnObj = GameObject.Find("back-main");//"Button"为你的Button的名称  
+		Button btn = btnObj.GetComponent<Button>();  
+		btn.onClick.AddListener(delegate ()  
+			{  
+				this.GoNextScene(btnObj);  
+			});  
+
+	}
+
+	// Update is called once per frame
+	void Update () {
+
+	}
+	public void GoNextScene(GameObject NScene)  
+	{  
+		SceneManager.LoadScene("1-main menu");//切换到场景Scene_2  
+	}  
+}  
