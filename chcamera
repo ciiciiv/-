@@ -1,0 +1,29 @@
+using UnityEngine;
+using System.Collections;
+
+public class chcamera : MonoBehaviour 
+{
+
+	void Start () 
+	{
+
+		GameObject plane = GameObject.Find("Plane0");
+		//得到面默认宽度
+		float size_x = plane.GetComponent<MeshFilter>().mesh.bounds.size.x;
+		//得到面宽度的缩放比例
+		float scal_x = plane.transform.localScale.x;
+		//得到面默认高度
+		float size_z = plane.GetComponent<MeshFilter>().mesh.bounds.size.z;
+		//得到面高度缩放比例
+		float scal_z = plane.transform.localScale.z;
+
+		//原始宽度乘以缩放比例计算出真实宽度
+		float mapWidth = size_x * scal_x;
+		float mapHeight = size_z * scal_z;
+
+		Debug.Log("得到面的位置："+plane.transform.position);
+		Debug.Log("得到面的宽度："+ mapWidth);
+		Debug.Log("得到面的高度："+ mapHeight);
+	}
+
+}
