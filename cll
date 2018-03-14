@@ -1,0 +1,31 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+public class cll : MonoBehaviour {
+
+	void Start () {
+
+		GameObject btnObj = GameObject.Find("left");//"Button"为你的Button的名称  
+		Button btn = btnObj.GetComponent<Button>();  
+		btn.onClick.AddListener(delegate ()  
+			{  
+				this.GoNextScene(btnObj);  
+			});  
+
+	}
+
+	// Update is called once per frame
+	void Update () {
+
+	}
+	public void GoNextScene(GameObject NScene)  
+	{  
+		SceneManager.LoadScene("2-set");//切换到场景Scene_2  
+	}  
+}  
